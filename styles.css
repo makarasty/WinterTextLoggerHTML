@@ -1,0 +1,159 @@
+body,
+html {
+	margin: 0;
+	padding: 0;
+	height: 100%;
+	font-family: Verdana, sans-serif;
+	color: #fff;
+	overflow: hidden;
+}
+
+body {
+	background: url('https://wallpapercave.com/wp/wp5123164.jpg') no-repeat center center fixed;
+	background-size: cover;
+	position: relative;
+}
+
+#snow-container {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	pointer-events: none;
+	z-index: 0;
+	overflow: hidden;
+}
+
+.snowflake {
+	position: absolute;
+	top: -10px;
+	background: rgba(255, 255, 255, 0.8);
+	border-radius: 50%;
+	opacity: 0.8;
+	animation: fall linear infinite;
+	filter: drop-shadow(0 0 5px #fff);
+}
+
+@keyframes fall {
+	to {
+		transform: translateY(110vh) rotate(360deg);
+	}
+}
+
+.overlay {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	background: rgba(0, 0, 0, 0.7);
+	padding: 30px 40px;
+	border-radius: 15px;
+	box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+	width: 90%;
+	max-width: 500px;
+	z-index: 1;
+	transition: transform 0.3s ease-in-out;
+}
+
+.overlay:hover {
+	transform: translate(-50%, -50%) scale(1.02);
+}
+
+.form-container h1 {
+	text-align: center;
+	margin-bottom: 20px;
+	color: #ffcccc;
+	font-size: 2.2em;
+	text-shadow: 0 0 10px #ff9999;
+}
+
+.form-group {
+	margin-bottom: 20px;
+}
+
+.form-group label,
+.form-group span {
+	display: block;
+	margin-bottom: 5px;
+	color: #ffe6e6;
+	font-size: 1.1em;
+	font-weight: 500;
+}
+
+.form-group input[type="text"] {
+	width: 100%;
+	padding: 10px 15px;
+	border: none;
+	border-radius: 8px;
+	font-size: 1em;
+	background: rgba(255, 255, 255, 0.2);
+	color: #fff;
+	caret-color: #ffcccc;
+	box-shadow: inset 0 0 5px rgba(255, 255, 255, 0.3);
+}
+
+.form-group input[type="radio"],
+.form-group input[type="checkbox"] {
+	margin-right: 10px;
+	transform: scale(1.2);
+	accent-color: #ffcccc;
+}
+
+#logList {
+	max-height: 200px;
+	overflow-y: auto;
+	padding-left: 50px;
+	list-style-position: outside;
+	margin-top: 10px;
+	font-size: 1em;
+	color: #fff;
+}
+
+#logList li {
+	cursor: pointer;
+	transition: font-weight 0.2s, transform 0.2s;
+	padding-left: 5px;
+	transform: translateX(0);
+}
+
+#logList li:hover {
+	transform: translateX(10px);
+}
+
+#logList li:active {
+	font-weight: bold;
+}
+
+#logList::-webkit-scrollbar {
+	width: 8px;
+}
+
+#logList::-webkit-scrollbar-track {
+	background: rgba(255, 255, 255, 0.1);
+	border-radius: 4px;
+}
+
+#logList::-webkit-scrollbar-thumb {
+	background-color: rgba(255, 255, 255, 0.3);
+	border-radius: 4px;
+}
+
+@media (max-width: 600px) {
+	.overlay {
+		padding: 20px 25px;
+	}
+
+	.form-container h1 {
+		font-size: 1.8em;
+	}
+
+	.form-group label,
+	.form-group span {
+		font-size: 1em;
+	}
+
+	#logList {
+		padding-left: 35px;
+	}
+}

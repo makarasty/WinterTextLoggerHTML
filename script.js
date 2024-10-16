@@ -31,8 +31,8 @@ const snowflakeInterval = setInterval(createSnowflake, 150);
 let snowflakeCount = 0;
 
 const maxSnowflakes = Math.max(
-	Math.floor(window.innerWidth / 55),
-	Math.floor(window.innerHeight / 55)
+	Math.floor(window.innerWidth / 65),
+	Math.floor(window.innerHeight / 65)
 );
 
 function manageSnowflakes() {
